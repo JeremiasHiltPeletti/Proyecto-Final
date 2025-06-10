@@ -18,6 +18,11 @@ body {
   opacity: 0;
   animation: fadeIn 3s forwards;
 }
+@media (max-width: 850px) {
+  .titulos, .section5 h1, .pagina-productos .mis-productos h1, .pagina-servicios .tituloCajaServicios, .pagina-servicios .servicios h1, .pagina-nosotros .tituloCaja {
+    margin-top: 150px;
+  }
+}
 
 @keyframes fadeIn {
   0% {
@@ -55,11 +60,18 @@ body {
   align-items: center;
   height: 80px;
 }
+.menu #menu {
+  display: none;
+}
+.menu input#menu-check {
+  display: none;
+}
 .menu img {
   margin-left: 100px;
 }
 .menu .miNav {
   padding-right: 350px;
+  display: block;
 }
 .menu ul li {
   display: inline-block;
@@ -108,7 +120,7 @@ body {
   width: 520px;
 }
 .pagina-nosotros .puntosFuertes {
-  background-color: rgb(4, 16, 59);
+  background-color: rgb(20, 20, 92);
   color: rgb(240, 233, 233);
   gap: 30px;
   width: 1000px;
@@ -116,6 +128,13 @@ body {
   display: flex;
   align-items: center;
   margin: 50px auto 50px;
+  justify-content: flex-start;
+}
+@media (max-width: 820px) {
+  .pagina-nosotros .puntosFuertes {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
 }
 .pagina-nosotros .industria p {
   width: 300px;
@@ -182,14 +201,25 @@ body {
   align-items: center;
 }
 .pagina-servicios .puntosFuertesServicios {
-  background-color: rgb(55, 8, 77);
-  color: rgb(255, 253, 253);
+  background-color: rgb(20, 20, 92);
+  color: rgb(240, 233, 233);
   gap: 30px;
   width: 1000px;
   padding: 40px;
   display: flex;
   align-items: center;
   margin: 50px auto 50px;
+}
+@media (max-width: 820px) {
+  .pagina-servicios .puntosFuertesServicios {
+    flex-wrap: wrap;
+    gap: 50px;
+  }
+}
+@media (max-width: 820px) {
+  .pagina-servicios .puntosFuertesServicios {
+    flex-wrap: nowrap;
+  }
 }
 .pagina-servicios .industria2 p {
   margin-top: 15px;
@@ -285,6 +315,202 @@ body {
   text-decoration: none;
   color: #ffffff;
   font-size: 18px;
+}
+
+@media (max-width: 1490px) {
+  .section3 {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+  .section4 {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+@media (max-width: 1050px) {
+  .menu .miNav {
+    padding-right: 80px;
+  }
+  .miSection {
+    justify-items: center;
+  }
+  .miSection h1 {
+    font-size: 28px;
+  }
+  .miSection p {
+    width: 610px;
+  }
+  .section2 {
+    justify-items: center;
+  }
+  .section3 {
+    padding-left: 100px;
+  }
+  .section3 h2 {
+    font-size: 23px;
+  }
+  .section3 p {
+    width: 330px;
+  }
+  .section3 img {
+    width: 300px;
+    height: 200px;
+  }
+  .section3 h3 {
+    font-size: 23px;
+  }
+  .paquete-grafico h2 {
+    font-size: 25px;
+  }
+  .pagina-servicios .section3 {
+    padding-left: 100px;
+    padding-right: 0;
+    margin-top: 100px;
+  }
+  .pagina-productos .section4 {
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 60px;
+  }
+  .paquete-web h3 {
+    font-size: 25px;
+  }
+  .paquete-grafico img {
+    width: 300px;
+    height: 200px;
+  }
+  .paquete-web img {
+    width: 300px;
+    height: 200px;
+  }
+}
+@media (max-width: 820px) {
+  .menu {
+    width: 100vh;
+  }
+  .miNav {
+    z-index: 9999;
+  }
+  .miNav ul {
+    display: flex;
+    flex-direction: column;
+    line-height: 30px;
+    background-color: #202020;
+    position: absolute;
+    padding: 2rem 3rem 3rem 3rem;
+    right: 0;
+    top: 0;
+  }
+  ul li {
+    margin-right: 30px;
+  }
+  .menu #menu {
+    display: block;
+  }
+  #menu,
+  #menu-check {
+    position: absolute;
+    right: 0;
+    margin-right: 50px;
+    z-index: 9999;
+  }
+  #menu-check:not(:checked) ~ .miNav {
+    display: none;
+  }
+  #menu-check:checked ~ .miNav {
+    display: block;
+  }
+  #menu-cerrar {
+    display: none;
+  }
+  #menu-check:checked ~ label #menu-abrir {
+    display: none;
+  }
+  .pagina-servicios .servicios h1 {
+    margin-top: 160px;
+    margin-bottom: 60px;
+  }
+  .cajasResponsive, .pagina-productos .section4, .pagina-servicios .section3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
+  }
+  .pagina-servicios .puntosFuertesServicios {
+    width: 70vh;
+  }
+}
+@media (max-width: 610px) {
+  .menu {
+    width: 100vh;
+  }
+  .menu img {
+    margin-left: 50px;
+  }
+  .miSection h1 {
+    font-size: 25px;
+    text-align: center;
+  }
+  .miSection p {
+    font-size: 16px;
+    width: 450px;
+    text-align: center;
+  }
+  .miSection img {
+    width: 400px;
+    height: 300px;
+    margin: auto;
+  }
+  .article2 h1 {
+    font-size: 25px;
+    text-align: center;
+  }
+  .article2 p {
+    font-size: 16px;
+  }
+  .article2 img {
+    width: 300px;
+    height: 200px;
+    margin: auto;
+  }
+  .mis-productos h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+}
+.footer {
+  width: 100vh;
+}
+
+.footer .logoFooter {
+  margin-left: 50pxaa;
+}
+
+@media (max-width: 450px) {
+  #menu,
+  #menu-check {
+    margin-right: -120px;
+  }
+  .miArticle {
+    margin-top: 200px;
+  }
+  .miArticle img {
+    width: 300px;
+    height: 200px;
+  }
+  .section2 {
+    margin-top: 170px;
+  }
+  .article2 p {
+    font-size: 16px;
+    width: 400px;
+  }
+  .footer {
+    width: 100vh;
+  }
+  .footer .logoFooter {
+    margin-left: 50px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

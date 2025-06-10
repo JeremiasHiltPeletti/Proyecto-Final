@@ -27,5 +27,13 @@
     "source-map-js": "^1.2.1",
     "to-regex-range": "^5.0.1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JeremiasHiltPeletti/Proyecto-Final.git"
+  },
+  "bugs": {
+    "url": "https://github.com/JeremiasHiltPeletti/Proyecto-Final/issues"
+  },
+  "homepage": "https://github.com/JeremiasHiltPeletti/Proyecto-Final#readme",
   "description": ""
 }

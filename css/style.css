@@ -3,52 +3,10 @@
   padding: 0;
   margin: 0;
 }
-
-body {
+* body {
   position: relative;
   padding-bottom: 6em;
   min-height: 100vh;
-}
-
-.titulos, .section5 h1, .pagina-productos .mis-productos h1, .pagina-servicios .tituloCajaServicios, .pagina-servicios .servicios h1, .pagina-nosotros .tituloCaja {
-  color: red;
-  text-align: center;
-  font-size: 40px;
-  margin-top: 50px;
-  opacity: 0;
-  animation: fadeIn 3s forwards;
-}
-@media (max-width: 850px) {
-  .titulos, .section5 h1, .pagina-productos .mis-productos h1, .pagina-servicios .tituloCajaServicios, .pagina-servicios .servicios h1, .pagina-nosotros .tituloCaja {
-    margin-top: 150px;
-  }
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-.textos, .pagina-productos .mis-productos p, .pagina-servicios p, .pagina-nosotros .article2 p, .pagina-home .explicacion {
-  font-size: 30px;
-  line-height: 30px;
-  font-size: 18px;
-}
-
-.botones, .section5 .botonEnviar, .pagina-nosotros .botonNosotros, .pagina-home .botonInicio {
-  background-color: red;
-  border: none;
-  padding: 8px;
-  border-radius: 30px;
-  color: white;
-  margin-left: 50px;
-}
-.botones:hover, .section5 .botonEnviar:hover, .pagina-nosotros .botonNosotros:hover, .pagina-home .botonInicio:hover {
-  background-color: rgb(137, 13, 209);
-  cursor: pointer;
 }
 
 .menu {
@@ -59,6 +17,7 @@ body {
   justify-content: space-between;
   align-items: center;
   height: 80px;
+  z-index: 99999;
 }
 .menu #menu {
   display: none;
@@ -69,46 +28,88 @@ body {
 .menu img {
   margin-left: 100px;
 }
-.menu .miNav {
+
+.miNav {
   padding-right: 350px;
   display: block;
 }
-.menu ul li {
+.miNav ul li {
   display: inline-block;
   padding-right: 10px;
   list-style-type: none;
 }
-.menu ul li a {
+.miNav ul li a {
   text-decoration: none;
   color: #ffffff;
   font-size: 18px;
 }
 
+.titulos, .pagina-contacto .section5 h1, .pagina-productos .mis-productos h1, .pagina-servicios .tituloCajaServicios, .pagina-servicios .servicios h1, .pagina-nosotros .tituloCaja {
+  color: red;
+  text-align: center;
+  font-size: 40px;
+  margin-top: 50px;
+  opacity: 0;
+  animation: fadeIn 3s forwards;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.textos, .pagina-productos .mis-productos p, .pagina-servicios p, .pagina-nosotros .article2 p, .miSection .explicacion {
+  font-size: 30px;
+  line-height: 30px;
+  font-size: 18px;
+}
+
+.botones, .pagina-contacto .section5 .botonEnviar, .pagina-nosotros .botonNosotros, .miSection .botonInicio {
+  background-color: red;
+  border: none;
+  padding: 8px;
+  border-radius: 30px;
+  color: white;
+}
+.botones:hover, .pagina-contacto .section5 .botonEnviar:hover, .pagina-nosotros .botonNosotros:hover, .miSection .botonInicio:hover {
+  background-color: rgb(137, 13, 209);
+  cursor: pointer;
+}
+
 .pagina-home {
   background-color: lightgray;
 }
-.pagina-home .miArticle {
+
+.miSection {
+  padding: 50px;
+}
+.miSection .miArticle {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
   padding: 50px;
 }
-.pagina-home .miSection {
-  padding: 50px;
-}
-.pagina-home .imagenInicio {
+.miSection .imagenInicio {
   width: 500px;
   height: 300px;
 }
-.pagina-home .explicacion {
+.miSection .explicacion {
   width: 520px;
 }
 .pagina-nosotros {
   background-color: lightgray;
 }
+.pagina-nosotros .section2 {
+  padding: 50px;
+}
 .pagina-nosotros .article2 {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 20px;
   padding: 50px;
 }
@@ -123,7 +124,7 @@ body {
   background-color: rgb(20, 20, 92);
   color: rgb(240, 233, 233);
   gap: 30px;
-  width: 1000px;
+  width: 100vh;
   padding: 40px;
   display: flex;
   align-items: center;
@@ -204,7 +205,7 @@ body {
   background-color: rgb(20, 20, 92);
   color: rgb(240, 233, 233);
   gap: 30px;
-  width: 1000px;
+  width: 100vh;
   padding: 40px;
   display: flex;
   align-items: center;
@@ -214,11 +215,6 @@ body {
   .pagina-servicios .puntosFuertesServicios {
     flex-wrap: wrap;
     gap: 50px;
-  }
-}
-@media (max-width: 820px) {
-  .pagina-servicios .puntosFuertesServicios {
-    flex-wrap: nowrap;
   }
 }
 .pagina-servicios .industria2 p {
@@ -279,14 +275,29 @@ body {
   height: 300px;
 }
 
-.section5 .form {
-  display: flex;
-  justify-content: center;
-  margin-top: 50px;
-  gap: 30px;
-  align-items: center;
+.pagina-contacto {
+  background-color: rgb(203, 211, 221);
 }
-.section5 .botonEnviar:hover {
+.pagina-contacto .section5 .form {
+  margin: auto;
+  background-color: white;
+  margin-top: 50px;
+  width: 90%;
+  max-width: 400px;
+  align-items: center;
+  padding: 4.5em 3em;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+.pagina-contacto .section5 .form .form_container {
+  display: grid;
+  gap: 20px;
+}
+.pagina-contacto .section5 .form input {
+  width: 100%;
+}
+.pagina-contacto .section5 .botonEnviar:hover {
   background-color: green;
 }
 
@@ -296,28 +307,23 @@ body {
   background-color: #333;
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   height: 80px;
 }
 .footer .logoFooter {
   margin-left: 100px;
 }
-.footer ul {
-  margin-right: 350px;
-}
-.footer ul li {
-  display: inline-block;
-  padding-right: 10px;
-  list-style-type: none;
-}
-.footer ul li a {
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 18px;
-}
 
 @media (max-width: 1490px) {
+  .menu .miNav {
+    padding-right: 100px;
+  }
+  .pagina-nosotros .section2 {
+    width: 600px;
+  }
+  .pagina-nosotros .puntosFuertes {
+    width: 86vh;
+  }
   .section3 {
     padding-left: 100px;
     padding-right: 100px;
@@ -325,6 +331,15 @@ body {
   .section4 {
     padding-left: 100px;
     padding-right: 100px;
+  }
+}
+@media (min-width: 1051px) and (max-width: 1480px) {
+  .pagina-servicios .section3 {
+    justify-content: center;
+    gap: 50px;
+  }
+  .pagina-productos .section4 {
+    padding: 0;
   }
 }
 @media (max-width: 1050px) {
@@ -337,72 +352,99 @@ body {
   .miSection h1 {
     font-size: 28px;
   }
-  .miSection p {
-    width: 610px;
-  }
   .section2 {
     justify-items: center;
   }
-  .section3 {
-    padding-left: 100px;
-  }
-  .section3 h2 {
-    font-size: 23px;
-  }
-  .section3 p {
-    width: 330px;
-  }
-  .section3 img {
-    width: 300px;
-    height: 200px;
-  }
-  .section3 h3 {
-    font-size: 23px;
-  }
-  .paquete-grafico h2 {
-    font-size: 25px;
+  .pagina-nosotros .puntosFuertes {
+    width: 90%;
   }
   .pagina-servicios .section3 {
-    padding-left: 100px;
-    padding-right: 0;
-    margin-top: 100px;
+    padding: 0px;
+    margin-top: 50px;
   }
   .pagina-productos .section4 {
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-bottom: 60px;
+    padding: 0px;
+    margin-bottom: 100px;
   }
-  .paquete-web h3 {
-    font-size: 25px;
+  .pagina-productos .paquete-grafico img {
+    width: 400px;
+    height: 300px;
   }
-  .paquete-grafico img {
-    width: 300px;
-    height: 200px;
-  }
-  .paquete-web img {
-    width: 300px;
-    height: 200px;
+  .pagina-productos .paquete-web img {
+    width: 400px;
+    height: 300px;
   }
 }
-@media (max-width: 820px) {
+@media (min-width: 821px) and (max-width: 900px) {
   .menu {
-    width: 100vh;
+    width: 100vw;
   }
-  .miNav {
-    z-index: 9999;
+  .menu img {
+    margin-left: 40px;
   }
-  .miNav ul {
+  .menu .miNav {
+    padding-right: 50px;
+  }
+  .pagina-home .miArticle {
+    width: 500px;
+  }
+  .pagina-nosotros .article2 {
+    width: 500px;
+  }
+  .pagina-nosotros .puntosFuertes {
+    width: 88%;
+  }
+  .pagina-nosotros .puntosFuertes .industria p,
+  .pagina-nosotros .puntosFuertes .expertos p,
+  .pagina-nosotros .puntosFuertes .acompañamiento p {
+    width: 230px;
+  }
+  .pagina-servicios .section3 img {
+    width: 350px;
+  }
+  .pagina-servicios .section3 p {
+    width: 350px;
+  }
+  .pagina-servicios .puntosFuertesServicios {
+    width: 88%;
+  }
+  .section5 {
     display: flex;
     flex-direction: column;
-    line-height: 30px;
-    background-color: #202020;
-    position: absolute;
-    padding: 2rem 3rem 3rem 3rem;
-    right: 0;
-    top: 0;
+    justify-content: center;
+    height: 90vh;
   }
-  ul li {
-    margin-right: 30px;
+  .section5 h1 {
+    font-size: 30px;
+  }
+  .section5 .form {
+    flex-wrap: wrap;
+    padding-top: 50px;
+    width: 90%;
+    max-width: 400px;
+  }
+  .section5 label {
+    font-size: 20px;
+  }
+  .section5 input,
+  .section5 textarea {
+    border-radius: 30px;
+    border: 1px solid red;
+  }
+}
+.titulos, .pagina-nosotros .tituloCaja, .pagina-servicios .servicios h1, .pagina-servicios .tituloCajaServicios, .pagina-productos .mis-productos h1, .pagina-contacto .section5 h1 {
+  margin-top: 60px;
+}
+
+@media (max-width: 820px) {
+  .titulos, .pagina-nosotros .tituloCaja, .pagina-servicios .servicios h1, .pagina-servicios .tituloCajaServicios, .pagina-productos .mis-productos h1, .pagina-contacto .section5 h1 {
+    margin-top: 100px;
+  }
+  .cajasResponsive, .pagina-productos .section4, .pagina-servicios .cajaServicios .puntosFuertesServicios, .pagina-servicios .servicios .section3 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 60px;
   }
   .menu #menu {
     display: block;
@@ -420,29 +462,84 @@ body {
   #menu-check:checked ~ .miNav {
     display: block;
   }
+  #menu-abrir {
+    border: 2px solid white;
+    padding: 6px;
+    color: white;
+  }
   #menu-cerrar {
     display: none;
+    border: 2px solid white;
+    padding: 6px;
+    color: white;
   }
-  #menu-check:checked ~ label #menu-abrir {
+  #menu-check:checked + #menu #menu-abrir {
     display: none;
+  }
+  #menu-check:checked + #menu #menu-cerrar {
+    display: block;
+  }
+  .miNav ul {
+    display: flex;
+    flex-direction: column;
+    line-height: 30px;
+    background-color: #202020;
+    position: absolute;
+    padding: 2rem 3rem 3rem 3rem;
+    right: 0;
+    top: 0;
+  }
+  .miNav ul li {
+    margin-right: 40px;
+  }
+  .pagina-nosotros .puntosFuertes {
+    width: 95%;
+    justify-content: center;
+    text-align: center;
+  }
+  .pagina-nosotros .puntosFuertes .acompañamiento p {
+    width: 400px;
   }
   .pagina-servicios .servicios h1 {
     margin-top: 160px;
     margin-bottom: 60px;
   }
-  .cajasResponsive, .pagina-productos .section4, .pagina-servicios .section3 {
+  .pagina-servicios .cajaServicios .puntosFuertesServicios {
+    width: 85%;
+    justify-content: center;
+    text-align: center;
+  }
+  .pagina-servicios .cajaServicios .industria2,
+  .pagina-servicios .cajaServicios .expertos2 .acompañamiento2 {
+    text-align: center;
+  }
+  .pagina-servicios .cajaServicios p {
+    width: 500px;
+  }
+  .pagina-contacto .section5 {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 60px;
+    justify-content: center;
+    height: 80vh;
   }
-  .pagina-servicios .puntosFuertesServicios {
-    width: 70vh;
+  .pagina-contacto .section5 .form {
+    flex-wrap: wrap;
+    padding-top: 50px;
+    gap: 58px;
+  }
+  .pagina-contacto .section5 label {
+    font-size: 20px;
+  }
+  .pagina-contacto .section5 input,
+  .pagina-contacto .section5 textarea {
+    border-radius: 30px;
+    border: 1px solid red;
   }
 }
 @media (max-width: 610px) {
   .menu {
-    width: 100vh;
+    width: 100%;
+    position: fixed;
   }
   .menu img {
     margin-left: 50px;
@@ -450,6 +547,9 @@ body {
   .miSection h1 {
     font-size: 25px;
     text-align: center;
+  }
+  .pagina-home .miArticle {
+    align-items: center;
   }
   .miSection p {
     font-size: 16px;
@@ -477,33 +577,152 @@ body {
     font-size: 32px;
     text-align: center;
   }
+  .footer {
+    position: fixed;
+    bottom: 0;
+  }
+  .footer .logoFooter {
+    margin-left: 50px;
+  }
+  .pagina-contacto .section5 h1 {
+    font-size: 30px;
+  }
+  .pagina-contacto .section5 .form {
+    flex-wrap: wrap;
+    gap: 30px;
+    width: 597px;
+  }
+  .pagina-contacto .section5 label {
+    font-size: 20px;
+  }
 }
-.footer {
-  width: 100vh;
+@media (min-width: 480px) and (max-width: 600px) {
+  .miSection .miArticle {
+    width: 300px;
+  }
+  .miSection .imagenInicio {
+    width: 330px;
+    height: 230px;
+    margin-top: 80px;
+  }
+  .miSection .explicacion {
+    width: 400px;
+  }
+  .section2 .article2 {
+    width: 350px;
+    align-items: center;
+  }
+  .section2 .article2 img {
+    width: 350px;
+    height: 300px;
+  }
+  .section2 .article2 .explicacion2 {
+    width: 350px;
+    text-align: center;
+  }
+  .section2 .article2 .botonNosotros {
+    margin-top: 10px;
+  }
+  .cajaNosotros {
+    margin-top: -90px;
+  }
+  .cajaNosotros .puntosFuertes {
+    width: 75%;
+  }
+  .pagina-servicios .cajaServicios .puntosFuertesServicios {
+    width: 75%;
+  }
+  .pagina-servicios .cajaServicios .puntosFuertesServicios .industria2 p,
+  .pagina-servicios .cajaServicios .puntosFuertesServicios .expertos2 p,
+  .pagina-servicios .cajaServicios .puntosFuertesServicios .acompañamiento2 p {
+    width: 360px;
+  }
+  .pagina-productos .mis-productos p {
+    width: 350px;
+  }
+  .section4 ul {
+    margin-left: 20px;
+  }
+  .pagina-contacto .section5 {
+    margin-top: 80px;
+  }
+  .pagina-contacto .section5 h1 {
+    font-size: 23px;
+  }
+  .pagina-contacto .section5 .form {
+    width: 70%;
+  }
+  .pagina-contacto .section5 label {
+    font-size: 18px;
+  }
 }
-
-.footer .logoFooter {
-  margin-left: 50pxaa;
-}
-
-@media (max-width: 450px) {
-  #menu,
-  #menu-check {
-    margin-right: -120px;
+@media (max-width: 479px) {
+  .menu img {
+    width: 200px;
+    height: 250px;
   }
   .miArticle {
-    margin-top: 200px;
+    margin-top: 100px;
+    width: 70%;
+  }
+  .miArticle .imagenInicio {
+    width: 300px;
+    height: 200px;
+  }
+  .miArticle .explicacion {
+    width: 400px;
   }
   .miArticle img {
     width: 300px;
     height: 200px;
   }
-  .section2 {
+  .pagina-nosotros .section2 {
     margin-top: 170px;
+    padding: 0;
   }
-  .article2 p {
+  .pagina-nosotros .section2 .article2 {
+    width: 70%;
+    padding: 0;
+  }
+  .pagina-nosotros .section2 .article2 img {
+    width: 300px;
+    height: 200px;
+  }
+  .pagina-nosotros .section2 .article2 .explicacion2 {
     font-size: 16px;
+    width: 350px;
+  }
+  .pagina-nosotros .cajaNosotros .puntosFuertes {
+    width: 80%;
+  }
+  .pagina-servicios .cajaServicios .puntosFuertesServicios {
+    width: 80%;
+  }
+  .pagina-servicios .cajaServicios .puntosFuertesServicios .industria2 p,
+  .pagina-servicios .cajaServicios .puntosFuertesServicios .expertos2 p,
+  .pagina-servicios .cajaServicios .puntosFuertesServicios .acompañamiento2 p {
+    width: 380px;
+  }
+  .pagina-productos .mis-productos {
+    margin-top: 150px;
+  }
+  .pagina-productos .mis-productos h1 {
+    font-size: 28px;
+  }
+  .pagina-productos .mis-productos p {
     width: 400px;
+  }
+  .pagina-contacto .section5 {
+    margin-top: 80px;
+  }
+  .pagina-contacto .section5 h1 {
+    font-size: 23px;
+  }
+  .pagina-contacto .section5 .form {
+    width: 70%;
+  }
+  .pagina-contacto .section5 label {
+    font-size: 18px;
   }
   .footer {
     width: 100vh;
